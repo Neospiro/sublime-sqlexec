@@ -2,10 +2,24 @@
     "sql_exec": {
         "options": ["-S"],
         "before": [
-            "set colsep '|'",
-            "set pagesize 100",
-            "set linesize 500",
-            "set tab off"
+          "SET LONG          100",
+          "SET PAGESIZE      0 EMBEDDED ON",
+          "SET LINESIZE      32767",
+          "SET HEADING       ON",
+          "SET TRIMSPOOL     OFF",
+          "SET WRAP          OFF",
+          "SET COLSEP        |",
+          "SET SQLBLANKLINES ON",
+          "SET FEED          ON",
+          "SET NULL          @",
+          "SET VERIFY        OFF ",
+          "SET FEEDBACK      ON",
+          "SET SERVEROUTPUT  ON",
+          "SET TAB           OFF",
+          "SET AUTO          OFF",
+          "SET TI            ON",
+          "SET TIMI          OFF",
+          "SET UND           '-'"
         ],
         "args": "{options.username}/{options.password}@\"(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST={options.host})(PORT={options.port})))(CONNECT_DATA=(SERVICE_NAME={options.service})))\"",
         "queries": {
